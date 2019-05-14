@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  price: 10
+  author: MyString
+  origtitle: MyString
+  serie: MyString
+  publisher: MyString
+  year: 2019
+  binding: MyString
+  page: 1000
+  discount: 10
+  newprice: 9
+
+two:
+  title: Book
+  description: MyText
+  price: 10
+  author: MyString
+  origtitle: MyString
+  serie: MyString
+  publisher: MyString
+  year: 9.99
+  binding: MyString
+  page: 9.99
+  discount: 9.99
+  newprice: 9.99
+
+testbook:
+  title: Test Book
+  description: AAAaaa111222
+  price: 10
+  author: AAAaaa111222
+  origtitle: AAAaaa111222
+  serie: AAAaaa111222
+  publisher: AAAaaa111222
+  year: 9.99
+  binding: AAAaaa111222
+  page: 9.99
+  discount: 9.99
+  newprice: 9.99

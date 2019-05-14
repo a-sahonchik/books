@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books Online Store</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="<%= controller.controller_name %>">
+    <div id="banner">
+      <%= image_tag("/assets/test-book.png") %>
+      <span class="title">Online Books Store</span>
+    </div>
+    <div id="columns">
+      <div id="side">
+        <ul>
+          <li><a href="http://www....">Главная</a></li>
+          <li><a href="http://www..../faq">FAQ</a></li>
+          <li><a href="http://www..../news">Новости</a></li>
+          <li><a href="http://www..../contact">Контакты</a></li>
+        </ul>
+        <div class="time_date">
+          <p><%= Time.now.strftime("%H:%M") %></p>
+          <p><%= Time.now.strftime("%d.%m.%Y") %></p>
+        </div>
+      </div>
+      <div id="main">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
