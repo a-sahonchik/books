@@ -15,8 +15,6 @@ class ProductTest < ActiveSupport::TestCase
   assert product.errors[:year].any?
   assert product.errors[:binding].any?
   assert product.errors[:page].any?
-  assert product.errors[:discount].any?
-  assert product.errors[:newprice].any?
   end
 
 #  test "product price must be positive" do

@@ -28,6 +28,10 @@
     float: left;
     width: 80px;
   }
+
+  span {
+    vertical-align: -webkit-baseline-middle;
+  }
 }
 
 #notice {
@@ -56,7 +60,25 @@
   #side {
     padding: 1em 2em;
     background: #141;
-    width: 150px;
+
+    form, div {
+      display: inline;
+    }
+
+    input {
+      font-size: small;
+    }
+
+    #cart {
+      font-size: smaller;
+      color: white;
+
+      table {
+        border-top: 1px dotted #595;
+        border-bottom: 1px dotted #595;
+        margin-bottom: 10px;
+      }
+    }
 
     ul {
       padding: 0;
