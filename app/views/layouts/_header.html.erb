@@ -1,0 +1,33 @@
+<div id="header">
+  <div class="container">
+    <div class="logo">
+      <%= image_tag("/assets/test-book.png") %>
+      <span class="title">Books<br>Store</span>
+    </div>
+    <div class="search">
+      <div class="form">
+        <input type="text" placeholder="Поиск в каталоге">
+        <button>Поиск</button>
+      </div>
+    </div>
+    <div id="cart">
+      <div class=cart_icon>
+        <i></i>
+      </div>
+      <div class="cart_info">
+        <p class="cart_header">Корзина</p>
+        <p class="total_quantity">
+          <%= @cart.total_quantity %> (<%= number_to_currency(@cart.total_price) %>)
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="header_nav">
+    <ul>
+      <li><a href="/">Главная</a></li>
+      <li><a href="/catalog">Каталог</a></li>
+      <li><a href="http://www..../news">Новости</a></li>
+      <li><a href="http://www..../contact">Контакты</a></li>
+    </ul>
+  </div>
+</div>

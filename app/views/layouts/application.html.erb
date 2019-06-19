@@ -7,35 +7,16 @@
         'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application',
         'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   </head>
 
   <body class="<%= controller.controller_name %>">
-    <div id="banner">
-      <%= image_tag("/assets/test-book.png") %>
-      <span class="title">Online Books Store</span>
-    </div>
-    <div id="columns">
-      <div id="side">
-          <% if @cart %>
-            <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-              <%= render @cart %>
-            <% end %>
-          <% end %>
-
-        <ul>
-          <li><a href="/">Главная</a></li>
-          <li><a href="http://www..../faq">FAQ</a></li>
-          <li><a href="http://www..../news">Новости</a></li>
-          <li><a href="http://www..../contact">Контакты</a></li>
-        </ul>
-        <div class="time_date">
-          <p><%= Time.now.strftime("%H:%M") %></p>
-          <p><%= Time.now.strftime("%d.%m.%Y") %></p>
-        </div>
-      </div>
-      <div id="main">
+    <%= render "layouts/header" %>
+    <div id="main">
+      <div class="container">
         <%= yield %>
       </div>
     </div>
+    <%= render "layouts/footer" %>
   </body>
 </html>

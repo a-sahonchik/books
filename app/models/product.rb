@@ -7,6 +7,22 @@ class Product < ApplicationRecord
 
   before_destroy :ensure_not_referenced_by_any_line_item
 
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
+  def self.search(query)
+  __elasticsearch__.search(
+    {
+      query: {
+        multi_match: {
+          query: query,
+          fields: ['title', 'author']
+        }
+      }
+    }
+  )
+end
+
   private
   def ensure_not_referenced_by_any_line_item
     unless line_items.empty?

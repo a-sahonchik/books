@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :orders
-  resources :line_items
-  resources :carts
-  get 'store/index'
+  get 'welcome/index'
+  resources :orders, :line_items, :carts, :products
 
-  resources :products
+  root 'welcome#index'
 
-  root to: 'store#index', as: 'store'
+  get 'catalog', to: 'store#index'
+
+  #root to: 'store#index', as: 'store'
 end

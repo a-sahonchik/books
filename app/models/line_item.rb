@@ -7,4 +7,8 @@ class LineItem < ApplicationRecord
     product.price * quantity
   end
 
+  def one_more
+    quantity + 1
+  end
+
 end

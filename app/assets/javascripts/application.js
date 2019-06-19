@@ -15,5 +15,10 @@
 //= require jquery
 //= require jquery-ui/effects/effect-blind
 //= require jquery_ujs
+//= require jquery.flexslider
 // require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('.flexslider').flexslider();
+});
