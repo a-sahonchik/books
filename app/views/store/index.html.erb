@@ -1,15 +1,5 @@
         <div class="nav_menu_left">
-          <ul class="nav_menu_left_list">
-            <li><a href="">Бестселлеры</a></li>
-            <li><a href="">Фантастика</a></li>
-            <li><a href="">Комиксы</a></li>
-            <li><a href="">Обучение</a></li>
-            <li><a href="">Бизнес</a></li>
-            <li><a href="">Кулинария</a></li>
-            <li><a href="">Иностранные языки</a></li>
-            <li><a href="">Поэзия</a></li>
-            <li><a href="">История</a></li>
-          </ul>
+          <%= render "layouts/nav_menu_left_list" %>
           <div id='filters' class='sections'>
             <div class='filter-attributes'>
               <p>Автор</p>
@@ -27,26 +17,26 @@
           </div>
         </div>
 
-        <div class="products">
-          <% cache @products do %>
-            <% @products.each do |product| %>
-              <% cache product do %>
-                <div class="single_product_container grid-products" data-author='<%= product.author %>'>
-                  <div class="single_product">
-                    <a href="<%= product_path(product) %>">
-                      <div class="single_product_cover">
-                        <img src="/assets/test-book.png">
-                      </div>
-                    </a>
-                    <p class="product_title"><a href="<%= product_path(product) %>"><%= truncate(product.title, :length => 55, :separator => ' ') %></a></p>
-                    <p class="product_info"><%= product.author %>, <%= product.year %></p>
-                    <p class="product_price"><%= number_to_currency(product.price) %></p>
-                    <%= button_to 'В корзину',
-                          line_items_path(product_id: product),
-                          remote: true %>
+        <div class="catalog_products">
+          <% @products.each do |product| %>
+            <div class="single_product_container grid-products" data-author='<%= product.author %>'>
+              <div class="single_product">
+                <a href="<%= product_path(product) %>">
+                  <div class="single_product_cover">
+                    <% if product.previews.attached? %>
+                      <%= image_tag (product.previews.first) %>
+                    <% else %>
+                      <%= image_tag ('/assets/test-book.png') %>
+                    <% end %>
                   </div>
-                </div>
-              <% end %>
-            <% end %>
+                </a>
+                <p class="product_title"><a href="<%= product_path(product) %>"><%= truncate(product.title, :length => 55, :separator => ' ') %></a></p>
+                <p class="product_info"><%= product.author %>, <%= product.year %></p>
+                <p class="product_price"><%= number_to_currency(product.price) %></p>
+                <%= button_to 'В корзину',
+                      line_items_path(product_id: product),
+                      remote: true %>
+              </div>
+            </div>
           <% end %>
         </div>

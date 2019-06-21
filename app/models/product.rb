@@ -5,10 +5,9 @@ class Product < ApplicationRecord
 
   has_many :line_items
 
-  before_destroy :ensure_not_referenced_by_any_line_item
+  has_many_attached :previews
 
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
+  before_destroy :ensure_not_referenced_by_any_line_item
 
   def self.search(query)
   __elasticsearch__.search(

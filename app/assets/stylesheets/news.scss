@@ -1,0 +1,27 @@
+.news_container {
+  width: 100%;
+
+  .single_new_container {
+    float: left;
+    width: 50%;
+    margin: 0 0 40px 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .single_new_container:nth-child(2n+1) {
+
+    .single_new {
+      margin: 0 40px 0 0;
+    }
+  }
+
+  .single_new_container:nth-child(2n) {
+
+    .single_new {
+      margin: 0 0 0 40px;
+    }
+  }
+}

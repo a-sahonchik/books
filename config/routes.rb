@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :news
   get 'welcome/index'
   resources :orders, :line_items, :carts, :products
 

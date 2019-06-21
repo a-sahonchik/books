@@ -29,7 +29,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+ru:
   hello: "Hello world"
 
   number:
@@ -39,3 +39,20 @@ en:
         unit: "руб."
         separator: ","
         delimiter: "&nbsp"
+
+  date:
+    month_names:
+    -
+    - января
+    - февраля
+    - марта
+    - апреля
+    - мая
+    - июня
+    - июля
+    - августа
+    - сентября
+    - октября
+    - ноября
+    - декабря
+
