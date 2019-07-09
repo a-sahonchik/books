@@ -1,0 +1,17 @@
+            <div class="slider_container">
+              <div class="flexslider product_slider">
+                <ul class="slides">
+                  <% if @product.previews.attached? %>
+                    <% @product.previews.each do |preview| %>
+                      <li>
+                        <%= image_tag preview %>
+                      </li>
+                    <% end %>
+                  <% else %>
+                    <li>
+                      <%= image_tag ('/assets/test-book.png') %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>

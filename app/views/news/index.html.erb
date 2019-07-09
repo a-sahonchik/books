@@ -3,13 +3,17 @@
           <% @news.each do |news| %>
             <div class="single_new_container">
               <div class="single_new">
-                <% if news.previews.attached? %>
-                  <%= image_tag (news.previews.first) %>
+                <a href="<%= news_path(news) %>">
+                  <% if news.previews.attached? %>
+                    <%= image_tag (news.previews.first) %>
 
-                  <% else %>
-                    <%= image_tag ('/assets/news-preview.jpeg') %>
-                <% end %>
-                <h2><%= news.title %></h2>
+                    <% else %>
+                      <%= image_tag ('/assets/news-preview.jpeg') %>
+                  <% end %>
+                </a>
+                <a class="news_title" href="<%= news_path(news) %>">
+                  <h2><%= news.title %></h2>
+                </a>
                 <p><%= news.created_at.time.to_s(:humanized_ago) %></p>
                 <p><%= news.description %></p>
                 <%= link_to 'Show', news %>

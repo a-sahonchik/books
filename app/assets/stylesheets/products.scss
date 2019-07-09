@@ -3,6 +3,49 @@
   width: 80%;
 
   .content_block {
+    display: grid;
     margin: 0 0 0 40px;
+
+    .slider_container {
+      width: 30%;
+      margin: 0 40px 0 0;
+      float: left;
+      margin: 0 0 40px 0;
+    }
+
+    .product_slider {
+      width: 100%;
+
+      img {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    .product_author {
+      color: #999;
+    }
+
+    .product_price {
+      font-weight: bold;
+      font-size: 2em;
+    }
+
+    table {
+      width: 70%;
+      margin: 0 0 40px 0;
+
+      tr {
+
+        td {
+          padding: 0 0 10px 0;
+        }
+
+        td:nth-child(1) {
+          width: 35%;
+          color: #999;
+        }
+      }
+    }
   }
 }

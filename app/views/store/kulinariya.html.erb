@@ -1,24 +1,10 @@
         <div class="nav_menu_left">
           <%= render "layouts/nav_menu_left_list" %>
-          <div id='filters' class='sections'>
-            <div class='filter-attributes'>
-              <p>Автор</p>
-                <ul>
-                <% Product.select("DISTINCT(AUTHOR)").each do |product| %>
-                  <li class="filter_checkbox">
-                    <input class="default_checkbox" type='checkbox' name='author' id='<%= product.author %>' value='<%= product.author %>' >
-                    <label for="<%= product.author %>"><%= product.author %></label>
-                  </li>
-                <% end %>
-            </div>
-            <div class="filter_clear_button">
-              <input type='button' id='clear_all' value='Сбросить фильтр'></input>
-            </div>
-          </div>
+          <%= render "layouts/filters" %>
         </div>
 
         <div class="catalog_products">
-          <% @products.each do |product| %>
+          <% @products.where(:category => "Кулинария").each do |product| %>
             <div class="single_product_container grid-products" data-author='<%= product.author %>'>
               <div class="single_product">
                 <a href="<%= product_path(product) %>">

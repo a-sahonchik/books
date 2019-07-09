@@ -76,6 +76,31 @@
       }
     }
   }
+
+  .filter_clear_button {
+    text-align: center;
+    padding: 15px 0;
+
+    input {
+      padding: 15px;
+      border: none;
+      background: #ffb85f;
+      transition: all 0.5s ease 0s;
+      text-transform: uppercase;
+      color: white;
+      cursor: pointer;
+    }
+
+    input:hover {
+      cursor: pointer;
+      background: #363a42;
+      transition: all 0.5s ease 0s;
+    }
+
+    input:focus {
+      outline: none;
+    }
+  }
 }
 
 

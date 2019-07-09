@@ -12,16 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :Title %>
+    <%= form.label :Заголовок %>
     <%= form.text_field :title %>
   </div>
   <div class="field">
-    <%= form.label :Description %>
-    <%= form.text_field :description %>
+    <%= form.label :'Текст новости' %>
+    <%= form.cktext_area :description %>
   </div>
-
-  <%= form.file_field :previews, multiple: true, direct_upload: true %>
-
+  <div class="field">
+    <%= form.label :Превью %>
+    <%= form.file_field :previews, multiple: true, direct_upload: true %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -12,66 +12,88 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :Название %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.label :Описание %>
+    <%= form.cktext_area :description %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
+    <%= form.label :Цена %>
     <%= form.text_field :price %>
   </div>
 
   <div class="field">
-    <%= form.label :author %>
+    <%= form.label :Автор %>
     <%= form.text_field :author %>
   </div>
 
   <div class="field">
-    <%= form.label :origtitle %>
+    <%= form.label :'Оригинальное название' %>
     <%= form.text_field :origtitle %>
   </div>
 
   <div class="field">
-    <%= form.label :serie %>
+    <%= form.label :Серия %>
     <%= form.text_field :serie %>
   </div>
 
   <div class="field">
-    <%= form.label :publisher %>
+    <%= form.label :Издательство %>
     <%= form.text_field :publisher %>
   </div>
 
   <div class="field">
-    <%= form.label :year %>
+    <%= form.label :'Год издания' %>
     <%= form.text_field :year %>
   </div>
 
   <div class="field">
-    <%= form.label :binding %>
+    <%= form.label :Обложка %>
     <%= form.text_field :binding %>
   </div>
 
   <div class="field">
-    <%= form.label :page %>
+    <%= form.label :Страниц %>
     <%= form.text_field :page %>
   </div>
 
   <div class="field">
-    <%= form.label :discount %>
+    <%= form.label :Скидка %>
     <%= form.text_field :discount %>
   </div>
 
   <div class="field">
-    <%= form.label :newprice %>
+    <%= form.label :'Цена со скидкой' %>
     <%= form.text_field :newprice %>
   </div>
 
-  <%= form.file_field :previews, multiple: true, direct_upload: true %>
+  <div class="field">
+    <%= form.label :Категория %>
+    <%= form.select :category, Product.categories.keys,
+                    prompt: 'Select category' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Изображения %>
+    <%= form.file_field :previews, multiple: true, direct_upload: true %>
+  </div>
+
+  <% if @product.previews.attached? %>
+    <div class="form_product_images">
+      <% @product.previews.each do |preview| %>
+        <div class="form_product_single_image">
+          <%= image_tag preview %>
+          <p><%= link_to 'Удалить', delete_image_attachment_product_path(preview.id),
+                    method: :delete,
+                      data: { confirm: 'Are you sure?' } %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>

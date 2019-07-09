@@ -1,9 +1,18 @@
 <div id="header">
   <div class="container">
-    <div class="logo">
-      <%= image_tag("/assets/test-book.png") %>
-      <span class="title">Books<br>Store</span>
-    </div>
+    <% if controller.controller_name == "welcome" %>
+      <div class="logo">
+        <%= image_tag("/assets/test-book.png") %>
+        <span class="title">Books<br>Store</span>
+      </div>
+    <% else %>
+      <div class="logo">
+        <a class="header_logo" href="/">
+          <%= image_tag("/assets/test-book.png") %>
+          <span class="title">Books<br>Store</span>
+        </a>
+      </div>
+    <% end %>
     <div class="search">
       <div class="form">
         <input type="text" placeholder="Поиск в каталоге">

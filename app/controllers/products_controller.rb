@@ -16,6 +16,13 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product = Product.find(params[:id])
+  end
+
+  def delete_image_attachment
+    @preview = ActiveStorage::Attachment.find(params[:id])
+    @preview.purge
+    redirect_back(fallback_location: products_path)
   end
 
   def create
@@ -62,6 +69,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:title, :description, :price, :author, :origtitle, :serie, :publisher, :year, :binding, :page, :discount, :newprice, previews: [])
+      params.require(:product).permit(:title, :description, :price, :author, :origtitle, :serie, :publisher, :year, :binding, :page, :discount, :newprice, :category, previews: [])
     end
 end

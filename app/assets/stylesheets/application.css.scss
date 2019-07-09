@@ -37,6 +37,12 @@ body {
   width: 15%;
   display: inline-flex;
 
+  .header_logo {
+    text-decoration: none;
+    color: black;
+    display: inline-flex;
+  }
+
   img {
   width: 80px;
   height: 80px;
@@ -388,4 +394,83 @@ body {
 #main {
   display: -webkit-box;
   margin-top: 40px;
+}
+
+form {
+  .field {
+    width: 100%;
+    padding: 0 0 40px 0;
+    display: flex;
+
+    label {
+      width: 20%;
+      margin: auto 0;
+    }
+
+    input {
+      width: 80%;
+      padding: 20px;
+      background: #f4f4f4;
+      border: 1px solid lightgray;
+    }
+
+    input[type="file" i] {
+      padding: 20px 0;
+      background: none;
+      border: none;
+    }
+
+    textarea {
+      width: 80%;
+      resize: none;
+    }
+
+    #cke_product_description {
+      width: 80%;
+
+      .cke_resizer {
+        display: none;
+      }
+
+      .cke_button__image {
+        display: none;
+      }
+    }
+  }
+
+  .form_product_images {
+    display: flex;
+
+    .form_product_single_image {
+      float: left;
+      margin: 0 40px 40px 0;
+
+      img {
+        height: 250px;
+        padding: 15px;
+        border: 1px solid lightgray;
+      }
+    }
+  }
+
+  .actions {
+    padding: 0 0 40px 0;
+
+    input {
+      height: 39px;
+      width: 150px;
+      position: relative;
+      border: none;
+      background: #ffb85f;
+      transition: all 0.5s ease 0s;
+      text-transform: uppercase;
+      color: white;
+      cursor: pointer;
+    }
+
+    input:hover {
+      background: #363a42;
+      transition: all 0.5s ease 0s;
+    }
+  }
 }

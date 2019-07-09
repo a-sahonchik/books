@@ -68,4 +68,5 @@ gem 'flex-slider-rails'
 
 gem 'rubocop', '~> 0.71.0', require: false
 
-gem 'russian', '~> 0.6.0'
+gem 'ckeditor'
+gem 'paperclip'

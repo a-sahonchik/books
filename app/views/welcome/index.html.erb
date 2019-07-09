@@ -2,7 +2,7 @@
           <%= render "layouts/nav_menu_left_list" %>
         </div>
 
-        <div class="flexslider">
+        <div id= "mainslider" class="flexslider">
           <ul class="slides">
             <li>
               <img src="/assets/slider-1.jpg" />
@@ -16,3 +16,28 @@
           </ul>
         </div>
     <%= render "layouts/advantages" %>
+
+    <h2>Новинки</h2>
+    <div class="catalog_products_welcome">
+      <% @products.each do |product| %>
+        <div class="single_product_container grid-products" data-author='<%= product.author %>'>
+          <div class="single_product">
+            <a href="<%= product_path(product) %>">
+              <div class="single_product_cover">
+                <% if product.previews.attached? %>
+                  <%= image_tag (product.previews.first) %>
+                <% else %>
+                  <%= image_tag ('/assets/test-book.png') %>
+                <% end %>
+              </div>
+            </a>
+            <p class="product_title"><a href="<%= product_path(product) %>"><%= truncate(product.title, :length => 40, :separator => ' ') %></a></p>
+            <p class="product_info"><%= product.author %>, <%= product.year %></p>
+            <p class="product_price"><%= number_to_currency(product.price) %></p>
+            <%= button_to 'В корзину',
+                  line_items_path(product_id: product),
+                  remote: true %>
+          </div>
+        </div>
+      <% end %>
+    </div>

@@ -20,5 +20,7 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('.flexslider').flexslider();
+  $('.flexslider').flexslider({
+    animation: "slide",
+  });
 });

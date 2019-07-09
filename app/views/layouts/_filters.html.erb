@@ -1,0 +1,15 @@
+          <div id='filters' class='sections'>
+            <div class='filter-attributes'>
+              <p>Автор</p>
+                <ul>
+                <% Product.select("DISTINCT(AUTHOR)").each do |product| %>
+                  <li class="filter_checkbox">
+                    <input class="default_checkbox" type='checkbox' name='author' id='<%= product.author %>' value='<%= product.author %>' >
+                    <label for="<%= product.author %>"><%= product.author %></label>
+                  </li>
+                <% end %>
+            </div>
+            <div class="filter_clear_button">
+              <input type='button' id='clear_all' value='Сбросить фильтр'></input>
+            </div>
+          </div>
